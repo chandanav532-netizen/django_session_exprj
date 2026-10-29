@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Session Login</title>
+</head>
+<body>
+    <h2>Student Login</h2>
+    {% if error %}
+        <p style="color: rosybrown;">({ error })</p>
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+        <label >Username</label>
+        <input type="text" name="username" required>
+        <br><br>
+
+        <label>Password</label>
+        <input type="password" name="password" required>
+        <br><br>
+
+        <button type="submit">Login</button>
+    </form>
+    <p>Demo username:joe</p>
+    <p>Demo password:1233</p>
+</body>
+</html>
